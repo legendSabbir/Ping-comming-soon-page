@@ -1,0 +1,268 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a,
+span,
+img,
+button,
+input,
+svg {
+  display: block;
+}
+
+
+input {
+  width: 100%
+}
+
+img {
+  height: auto;
+}
+
+input,
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+address {
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+@blue: hsl(223, 87%, 63%);
+@pale-blue: hsl(223, 100%, 88%);
+@light-red: hsl(354, 100%, 66%);
+@gray: hsl(0, 0%, 59%);
+@very-dark-blue: hsl(209, 33%, 12%);
+
+
+html {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  padding-inline: 24px;
+}
+
+main {
+  margin-inline: auto;
+  max-width: 340px;
+}
+
+.content {
+  margin-top: 8rem;
+  text-align: center;
+  
+  .logo {
+    margin-inline: auto;
+    margin-block-end: 3.5rem;
+    width: 55px;
+  }
+  
+  .section-title {
+    font-weight: 200;
+    color: @gray;
+    font-size: 2.2rem;
+    margin-block-end: 1rem;
+    
+    span {
+      color: @very-dark-blue;
+      display: inline-block;
+      font-weight: 700;
+    }
+  }
+  
+  .text {
+    font-size: 1.3rem;
+  }
+}
+
+form {
+  margin-block: 1rem 2.8rem;
+  padding: 1.5rem 2.5rem;
+  
+  .form-control {
+    margin-block-end: 1.2rem;
+    
+    input {
+      font-size: 1.2rem;
+      padding: 0.8rem 3rem;
+      border-radius: 200px;
+      outline: 1px solid @pale-blue;
+      
+      &::placeholder { color: @pale-blue; }
+      
+      &:focus { outline-color: black; }
+      
+      &.error{
+        outline-color: @light-red;
+       + .error-text {
+         display: block; 
+         }
+      }
+    }
+    
+    .error-text {
+      display: none;
+      margin-block: 0.4rem 2.5rem;
+      font-size: 1.1rem;
+      text-align: center;
+      color: @light-red;
+      font-style: italic;
+    }
+  }
+  
+  button {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 0.9rem 3rem;
+    border-radius: 200px;
+    background-color: @blue;
+    box-shadow: 0px 6px 12px @pale-blue;
+    
+    &:hover { background-color: hsl(223, 87%, 73%); }
+  }
+}
+
+.img-holder {
+  margin-top: 5rem;
+  aspect-ratio: 1280 / 782;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+footer {
+  margin-top: 8rem;
+  
+  .footer-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+    .footer-link {
+      font-size: 1.6rem;
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      border: 1px solid hsl(0, 0%, 79%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: @blue;
+      
+      &:hover {
+        border-color: @blue;
+        color: #fff;
+        background-color: @blue;
+      }
+    }
+  }
+}
+
+.footer-text {
+  margin-block: 1.6rem 3rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: @gray;
+}
+
+.attribution {
+  margin-block: 1.2rem;
+  text-align: center;
+  font-size: 1.1rem;
+  
+  a {
+    display: inline-block;
+    text-decoration: underline;
+    color: @blue;
+  }
+}
+
+@media only screen and (min-width: 620px) {
+  body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+  }
+  
+  main {
+    max-width: 580px;
+  }
+  
+  .content {
+    .logo {
+      width: 86px;
+    }
+    
+    .section-title {
+      font-size: 4rem;
+      margin-block-end: 0.5rem;
+    }
+    
+    .text {
+      font-size: 1.8rem;
+      line-height: 1.2;
+      margin-block: 1.3rem;
+    }
+  }
+  
+  
+  form {
+    display: flex;
+    align-items: start;
+    gap: 1.5rem;
+    
+    .form-control {
+      flex: 1;
+      
+      input {
+        padding: 1.5rem 3rem;  
+      }
+    }
+    
+    button {
+      margin: 0;
+      padding: 1.5rem 5rem;
+      width: max-content;
+    }
+  }
+}
